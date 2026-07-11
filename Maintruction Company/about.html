@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Maintruction Company - Our mission, vision, values, and experienced team.">
+    <title>About Us | Maintruction Company</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(15, 76, 129, 0.9)), url('https://picsum.photos/seed/about_bg/1920/500') no-repeat center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+        }
+
+        /* About Intro */
+        .about-intro {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+            border: 5px solid var(--white);
+        }
+
+        .experience-badge h3 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 5px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mv-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Team Section */
+        .team-section {
+            background-color: var(--bg-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: var(--transition);
+        }
+
+        .team-member:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 20px;
+            position: relative;
+            background: var(--white);
+            z-index: 1;
+        }
+
+        .team-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .team-info p {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Values */
+        .values-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .value-item i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Maintruction Company" class="logo-img">
+                Maintruction<span>.</span></a>
+            <nav>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container reveal">
+            <h1>About Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>About</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Intro -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-image reveal">
+                    <img src="https://picsum.photos/seed/about_team/600/500" alt="Maintruction Team">
+                    <div class="experience-badge">
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="about-content reveal" style="transition-delay: 0.2s;">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2 class="section-title">Your Trusted Partner in Home Maintenance</h2>
+                    <p style="margin-bottom: 20px;">Maintruction Company was founded with a single goal: to provide
+                        high-quality, reliable, and transparent home maintenance and civil services to the residents of
+                        Ahmedabad. We understand the frustration of dealing with unprofessional technicians and hidden
+                        costs.</p>
+                    <p style="margin-bottom: 30px;">That's why our team consists only of verified, experienced
+                        professionals who take pride in their craft. Whether it's a minor plumbing fix or a complete
+                        home renovation, we handle every project with the utmost dedication and precision.</p>
+
+                    <div class="values-list">
+                        <div class="value-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div><strong>Quality Workmanship</strong> - We never compromise on quality.</div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-clock"></i>
+                            <div><strong>On-Time Delivery</strong> - We respect your time.</div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div><strong>Trusted Professionals</strong> - Background verified experts.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mission-vision reveal">
+                <div class="mv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To deliver exceptional, hassle-free property maintenance services through a team of skilled
+                        professionals, ensuring maximum customer satisfaction and peace of mind.</p>
+                </div>
+                <div class="mv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become the most reliable and leading home maintenance and property service provider in India,
+                        setting new benchmarks for quality and professionalism.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: var(--white); font-size: 2rem;"><img
+                            src="images/logo.png" alt="Maintruction Company" class="logo-img"> Maintruction<span
+                            style="color: var(--accent-color);">.</span></a>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Premium Home Maintenance & Property
+                        Services in Ahmedabad. Quality work, guaranteed satisfaction.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">AC Services</a></li>
+                        <li><a href="services.html">Painting & Civil</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>I-65, Titanium City Centre Mall,<br>Ahmedabad, Gujarat, India</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-phone-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>+91 8460617976</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-envelope" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>maintructioncompany@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maintruction Company. All Rights Reserved. Designed with <i class="fas fa-heart"
+                        style="color: var(--accent-color);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918460617976" class="floating-btn floating-whatsapp" target="_blank"
+        title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+918460617976" class="floating-btn floating-call" title="Call Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="#" class="floating-btn back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

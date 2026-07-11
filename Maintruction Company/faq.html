@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about Maintruction Company's home maintenance services, pricing, and service areas.">
+    <title>FAQ | Maintruction Company</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(15, 76, 129, 0.9)), url('https://picsum.photos/seed/faq_bg/1920/500') no-repeat center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        .page-header h1 { color: var(--white); font-size: 3rem; margin-bottom: 10px; }
+        .breadcrumb { display: flex; justify-content: center; gap: 10px; color: rgba(255,255,255,0.7); }
+        .breadcrumb a { color: var(--white); }
+
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            overflow: hidden;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .faq-item.active {
+            border-left-color: var(--accent-color);
+        }
+
+        .faq-header {
+            padding: 22px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-header h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .faq-item.active .faq-header h3 {
+            color: var(--primary-color);
+        }
+
+        .faq-header i {
+            font-size: 1rem;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-content p {
+            padding: 0 30px 22px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* CTA Banner */
+        .faq-cta {
+            background: linear-gradient(135deg, var(--primary-color), #1a62a3);
+            border-radius: var(--border-radius);
+            padding: 50px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 60px;
+        }
+
+        .faq-cta h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .faq-cta p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Maintruction<span>.</span></a>
+            <nav>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container reveal">
+            <h1>Frequently Asked Questions</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>FAQ</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 50px;">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">We Have Answers</h2>
+                <p class="section-desc">Find answers to the most common questions about our services, pricing, and processes.</p>
+            </div>
+
+            <div class="faq-container">
+
+                <!-- FAQ 1 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>What services does Maintruction Company offer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We offer a complete range of home maintenance services including Plumbing, Electrical, Carpentry, AC Installation & Repair, Interior & Exterior Painting, Civil Work, Waterproofing, Home Renovation, and Annual Maintenance Contracts (AMC).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Which areas in Ahmedabad do you serve?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We serve all areas across Ahmedabad and its surrounding regions including Satellite, SG Highway, Prahlad Nagar, Bodakdev, Thaltej, Navrangpura, Maninagar, Gota, Chandkheda, Bopal, and more.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you provide emergency services?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, we provide 24/7 emergency services for urgent plumbing leaks, electrical failures, and other critical home repair issues. Call us at +91 8460617976 for immediate assistance.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>How do I book a service?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>You can book a service by calling us directly, sending a WhatsApp message to +91 8460617976, or filling out the contact form on our website. Our team will schedule a visit at your earliest convenience.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>What are your working hours?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Our regular working hours are Monday to Saturday, 9:00 AM to 7:00 PM. Sunday services are available on prior appointment. Emergency services are available 24/7.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you provide a cost estimate before starting work?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Absolutely. We always provide a detailed, transparent cost estimate after inspecting the job. There are no hidden charges. Work begins only after you approve the quotation.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Are your technicians trained and verified?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, all our technicians are background-verified, highly trained, and have several years of experience. We ensure every professional meets our strict quality standards before they join our team.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you offer Annual Maintenance Contracts (AMC)?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, we offer customizable Annual Maintenance Contracts for homes, offices, and residential societies. Our AMC plans cover regular maintenance, priority support, and discounted repair rates.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>What types of AC units do you service?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We service and repair all types of air conditioners including Split AC, Window AC, Cassette AC, Tower AC, and Central AC systems from all major brands like Daikin, Voltas, LG, Samsung, Hitachi, and more.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 10 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you use quality materials for repairs?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, we only use ISI-certified, high-quality, branded materials and spare parts. We believe in long-lasting repairs that save you money in the long run.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 11 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Can you handle large-scale renovation projects?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Absolutely. We have dedicated project managers and skilled teams for large-scale home renovations, office interiors, complete bathroom/kitchen remodeling, and civil construction work.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 12 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you provide a warranty on your work?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, we provide a service warranty on all our work. The warranty period varies by service type — typically 30 days for minor repairs and up to 1 year for major works like waterproofing and painting.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 13 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>What is the typical response time for a service request?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>For regular service requests, we typically schedule a visit within 24–48 hours. For emergencies, our response time is usually within 1–2 hours depending on your location.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 14 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Can I customize a modular kitchen or wardrobe design?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, our carpentry team works closely with you to create fully customized modular kitchens, wardrobes, and furniture tailored to your space, style preferences, and budget.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 15 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you handle waterproofing for terraces and bathrooms?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, we specialize in terrace waterproofing, bathroom waterproofing, wall seepage treatment, and crack filling using advanced chemical coatings with long-term warranties.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 16 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We accept Cash, UPI (Google Pay, PhonePe, Paytm), Bank Transfer (NEFT/RTGS), and Cheque payments. For larger projects, we also offer milestone-based payment plans.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 17 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>Do you provide services for commercial properties?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes, we cater to both residential and commercial properties including offices, shops, showrooms, restaurants, and residential societies with customized maintenance solutions.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 18 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>What brands of paint do you use?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We use premium paints from trusted brands like Asian Paints, Berger, Nerolac, and Dulux. We can also work with any specific brand you prefer.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 19 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>How long does a typical home painting project take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>A standard 2-BHK interior painting takes 4–5 days including wall putty, primer, and two coats of paint. Larger homes or texture/decorative work may take 7–10 days.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 20 -->
+                <div class="faq-item reveal">
+                    <div class="faq-header">
+                        <h3>How do I get a quote for my project?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Simply call us at +91 8460617976, WhatsApp us, or fill out the form on our Contact page. Our expert will visit your site for a free inspection and provide a detailed, no-obligation quotation.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="faq-cta reveal">
+                <h2>Still Have Questions?</h2>
+                <p>Our team is always ready to help. Reach out to us for any queries or to schedule a service.</p>
+                <a href="contact.html" class="btn btn-secondary" style="margin-right: 10px;"><i class="fas fa-envelope"></i> Contact Us</a>
+                <a href="tel:+918460617976" class="btn glass" style="color: var(--white);"><i class="fas fa-phone-alt"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: var(--white); font-size: 2rem;">Maintruction<span style="color: var(--accent-color);">.</span></a>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Premium Home Maintenance & Property Services in Ahmedabad.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">AC Services</a></li>
+                        <li><a href="services.html">Painting & Civil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>I-65, Titanium City Centre Mall,<br>Ahmedabad, Gujarat, India</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-phone-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>+91 8460617976</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-envelope" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>maintructioncompany@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maintruction Company. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--accent-color);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918460617976" class="floating-btn floating-whatsapp" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+918460617976" class="floating-btn floating-call" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+    <a href="#" class="floating-btn back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="script.js"></script>
+</body>
+</html>

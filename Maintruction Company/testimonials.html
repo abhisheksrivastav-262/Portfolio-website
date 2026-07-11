@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read what our customers say about Maintruction Company's home maintenance services in Ahmedabad.">
+    <title>Testimonials | Maintruction Company</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(15, 76, 129, 0.9)), url('https://picsum.photos/seed/testimonials_bg/1920/500') no-repeat center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        .page-header h1 { color: var(--white); font-size: 3rem; margin-bottom: 10px; }
+        .breadcrumb { display: flex; justify-content: center; gap: 10px; color: rgba(255,255,255,0.7); }
+        .breadcrumb a { color: var(--white); }
+
+        /* Testimonial Grid */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            border-top: 4px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-top-color: var(--accent-color);
+        }
+
+        .testimonial-card .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 3rem;
+            color: rgba(15, 76, 129, 0.08);
+        }
+
+        .stars {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card p.review-text {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .client-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 3px;
+        }
+
+        .client-details span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .client-details .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 2px;
+        }
+
+        .client-details .location i {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+        }
+
+        /* Stats Banner */
+        .review-stats {
+            background: linear-gradient(135deg, var(--primary-color), #1a62a3);
+            color: var(--white);
+            padding: 60px 0;
+            margin-top: 80px;
+            border-radius: var(--border-radius);
+        }
+
+        .review-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .review-stat h3 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .review-stat p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Maintruction<span>.</span></a>
+            <nav>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container reveal">
+            <h1>Client Testimonials</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Testimonials</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 50px;">
+                <span class="section-subtitle">What People Say</span>
+                <h2 class="section-title">Our Happy Customers</h2>
+                <p class="section-desc">Over 1200+ satisfied customers across Ahmedabad trust us with their homes and offices.</p>
+            </div>
+
+            <div class="testimonials-grid">
+
+                <!-- Review 1 -->
+                <div class="testimonial-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Maintruction completely renovated our kitchen and bathrooms. The quality of tile work and plumbing was exceptional. The team was punctual, neat, and the final result exceeded our expectations."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client1/120/120" alt="Rahul Desai" class="client-img">
+                        <div class="client-details">
+                            <h4>Rahul Desai</h4>
+                            <span>Homeowner</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Satellite, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"We hired them for a full office renovation. The civil work, false ceiling, and modular furniture were done flawlessly. Very professional and their pricing is transparent with no hidden costs."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client2/120/120" alt="Priya Patel" class="client-img">
+                        <div class="client-details">
+                            <h4>Priya Patel</h4>
+                            <span>Business Owner</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Prahlad Nagar, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">"I've been using their AC AMC for 2 years. Every service visit is on time, the technician is skilled, and my ACs run like new. Their emergency support is quick too. Highly recommended."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client3/120/120" alt="Amit Shah" class="client-img">
+                        <div class="client-details">
+                            <h4>Amit Shah</h4>
+                            <span>Resident</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Bodakdev, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="testimonial-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Had a plumbing emergency at midnight — a burst pipe was flooding the kitchen. Called Maintruction and their team arrived within the hour. Excellent emergency response! They saved my home."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client4/120/120" alt="Neha Sharma" class="client-img">
+                        <div class="client-details">
+                            <h4>Neha Sharma</h4>
+                            <span>Homemaker</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Navrangpura, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The interior painting they did for our 3-BHK flat was outstanding. The texture work on the living room accent wall is absolutely gorgeous. Colors look vibrant even after 8 months."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client5/120/120" alt="Karan Mehta" class="client-img">
+                        <div class="client-details">
+                            <h4>Karan Mehta</h4>
+                            <span>Software Engineer</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> SG Highway, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Got my complete electrical wiring redone by Maintruction for our new house. The concealed wiring was done neatly, the MCB panel is well-organized, and they even installed smart switches."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client6/120/120" alt="Dhruv Joshi" class="client-img">
+                        <div class="client-details">
+                            <h4>Dhruv Joshi</h4>
+                            <span>Architect</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Thaltej, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="testimonial-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">"Built a modular wardrobe and a study table through Maintruction. The carpenter was experienced, used excellent quality plywood, and the soft-close hinges work perfectly. Great value for money."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client7/120/120" alt="Riya Agarwal" class="client-img">
+                        <div class="client-details">
+                            <h4>Riya Agarwal</h4>
+                            <span>Interior Enthusiast</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Vastrapur, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Terrace waterproofing done by their team last monsoon season. Not a single drop leaked this year! They used top-grade chemicals and gave a proper warranty too. Absolutely trustworthy."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client8/120/120" alt="Vijay Thakkar" class="client-img">
+                        <div class="client-details">
+                            <h4>Vijay Thakkar</h4>
+                            <span>Property Owner</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Maninagar, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"We took their Annual Maintenance Contract for our society. They handle plumbing, electrical, and civil work for all 48 flats. Extremely organized service and their response time is impressive."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/client9/120/120" alt="Manish Trivedi" class="client-img">
+                        <div class="client-details">
+                            <h4>Manish Trivedi</h4>
+                            <span>Society Secretary</span>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Gota, Ahmedabad</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Review Stats Banner -->
+            <div class="review-stats reveal" style="margin-top: 60px;">
+                <div class="container">
+                    <div class="review-stats-grid">
+                        <div class="review-stat">
+                            <h3>4.9/5</h3>
+                            <p>Average Rating</p>
+                        </div>
+                        <div class="review-stat">
+                            <h3>1200+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="review-stat">
+                            <h3>98%</h3>
+                            <p>Satisfaction Rate</p>
+                        </div>
+                        <div class="review-stat">
+                            <h3>500+</h3>
+                            <p>Google Reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: var(--white); font-size: 2rem;">Maintruction<span style="color: var(--accent-color);">.</span></a>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Premium Home Maintenance & Property Services in Ahmedabad.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Gallery</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">AC Services</a></li>
+                        <li><a href="services.html">Painting & Civil</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>I-65, Titanium City Centre Mall,<br>Ahmedabad, Gujarat, India</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-phone-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>+91 8460617976</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-envelope" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>maintructioncompany@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maintruction Company. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--accent-color);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918460617976" class="floating-btn floating-whatsapp" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+918460617976" class="floating-btn floating-call" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+    <a href="#" class="floating-btn back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="script.js"></script>
+</body>
+</html>

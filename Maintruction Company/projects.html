@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maintruction Company Projects - View our latest home maintenance and renovation projects in Ahmedabad.">
+    <title>Our Projects | Maintruction Company</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(15, 76, 129, 0.9)), url('https://picsum.photos/seed/projects_bg/1920/500') no-repeat center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+        }
+
+        /* Filter Navigation */
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--text-color);
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 76, 129, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-overlay h3 {
+            transform: translateY(0);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Maintruction<span>.</span></a>
+            <nav>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container reveal">
+            <h1>Our Gallery</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Projects</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 40px;">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-desc">Take a look at some of our recently completed projects across various services.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-nav reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="renovation">Renovation</button>
+                <button class="filter-btn" data-filter="plumbing">Plumbing</button>
+                <button class="filter-btn" data-filter="electrical">Electrical</button>
+                <button class="filter-btn" data-filter="carpentry">Carpentry</button>
+                <button class="filter-btn" data-filter="painting">Painting</button>
+            </div>
+
+            <!-- Gallery -->
+            <div class="gallery-grid reveal">
+                
+                <!-- Renovation 1 -->
+                <div class="gallery-item" data-category="renovation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-19iJxldasnpADB1UqiPTtmHikSIO2c2mbxxAQvYe6nJ9rKHmygQEcht&s=10" alt="Home Renovation">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Living Room Renovation</h3>
+                        <p>Complete Makeover</p>
+                    </div>
+                </div>
+
+                <!-- Plumbing 1 -->
+                <div class="gallery-item" data-category="plumbing">
+                    <img src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/ceramic-bathroom-fittings-20240203162050089.jpg" alt="Plumbing Work">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Bathroom Fitting</h3>
+                        <p>Plumbing Services</p>
+                    </div>
+                </div>
+
+                <!-- Electrical 1 -->
+                <div class="gallery-item" data-category="electrical">
+                    <img src="https://www.thespruce.com/thmb/zJIQdKknabLso-Mx6TxrIaZfDbs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-fix-a-buzzing-dimmer-switch-5209221-hero-6d479ae06e234fa3b400113931dfdb62.jpg" alt="Electrical Work">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Lighting Installation</h3>
+                        <p>Electrical Services</p>
+                    </div>
+                </div>
+
+                <!-- Carpentry 1 -->
+                <div class="gallery-item" data-category="carpentry">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOrEr9wGy2wyYtgACW29nxLpmXTgheyDGGEuLv52u8dEhw0ksIJTcqqfc&s=10" alt="Carpentry Work">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Modular Kitchen</h3>
+                        <p>Carpentry</p>
+                    </div>
+                </div>
+
+                <!-- Painting 1 -->
+                <div class="gallery-item" data-category="painting">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/364598379/OQ/VJ/ZX/34405990/interior-and-exterior-painting-service.jpg" alt="Painting Work">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Exterior Painting</h3>
+                        <p>Painting & Civil</p>
+                    </div>
+                </div>
+
+                <!-- Renovation 2 -->
+                <div class="gallery-item" data-category="renovation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-19iJxldasnpADB1UqiPTtmHikSIO2c2mbxxAQvYe6nJ9rKHmygQEcht&s=10" alt="Office Renovation">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Office Interior</h3>
+                        <p>Commercial Renovation</p>
+                    </div>
+                </div>
+                
+                <!-- Plumbing 2 -->
+                <div class="gallery-item" data-category="plumbing">
+                    <img src="https://rntankcleaning.com/wp-content/uploads/2025/02/underground-water-tank-cleaning-services.webp" alt="Water Tank">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Overhead Tank Setup</h3>
+                        <p>Plumbing Services</p>
+                    </div>
+                </div>
+
+                <!-- Carpentry 2 -->
+                <div class="gallery-item" data-category="carpentry">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1tAvCIHRSz9jBUgLitC7lTfygvEkiYu_0lz_4BBXGC1wWkUbGsbPZP9e7&s=10" alt="Wardrobe">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Custom Wardrobe</h3>
+                        <p>Carpentry</p>
+                    </div>
+                </div>
+
+                <!-- Painting 2 -->
+                <div class="gallery-item" data-category="painting">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/364598379/OQ/VJ/ZX/34405990/interior-and-exterior-painting-service.jpg" alt="Texture Painting">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Texture Wall Painting</h3>
+                        <p>Interior Design</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <i class="fas fa-times lightbox-close"></i>
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged Project">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: var(--white); font-size: 2rem;"><img src="images/logo.png" alt="Maintruction Company" class="logo-img"> Maintruction<span style="color: var(--accent-color);">.</span></a>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Premium Home Maintenance & Property Services in Ahmedabad. Quality work, guaranteed satisfaction.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">AC Services</a></li>
+                        <li><a href="services.html">Painting & Civil</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>I-65, Titanium City Centre Mall,<br>Ahmedabad, Gujarat, India</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-phone-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>+91 8460617976</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-envelope" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>maintructioncompany@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maintruction Company. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--accent-color);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918460617976" class="floating-btn floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+918460617976" class="floating-btn floating-call">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gallery Filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Active class
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.classList.remove('hide');
+                            // Slight animation trick
+                            item.style.opacity = '0';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            item.classList.add('hide');
+                        }
+                    });
+                });
+            });
+
+            // Lightbox
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').getAttribute('src');
+                    lightboxImg.setAttribute('src', imgSrc);
+                    lightbox.classList.add('active');
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

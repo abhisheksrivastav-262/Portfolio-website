@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Maintruction Company - Professional Home Maintenance & Property Services in Ahmedabad. Plumbing, Electrical, Carpentry, Painting, and Civil Work.">
+    <title>Maintruction Company | Premium Home Maintenance Services</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Home Specific Styles */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(15, 76, 129, 0.7), rgba(15, 76, 129, 0.8)), url('https://picsum.photos/seed/maintruction_hero/1920/1080') no-repeat center center/cover;
+            background-attachment: fixed;
+            /* Parallax */
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-buttons {
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Overview */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin: -60px auto 20px;
+            position: relative;
+            z-index: 2;
+            border: 4px solid var(--white);
+        }
+
+        .service-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Process Steps */
+        .process-section {
+            background-color: var(--white);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .process-step {
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-color);
+            color: var(--white);
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Stats Counter */
+        .stats-section {
+            background: linear-gradient(rgba(15, 76, 129, 0.9), rgba(15, 76, 129, 0.9)), url('https://picsum.photos/seed/maintruction_stats/1920/1080') no-repeat center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            min-width: 350px;
+            padding: 30px;
+            flex-shrink: 0;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Contact CTA */
+        .cta-section {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-logo">Maintruction<span>.</span></div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Maintruction Company" class="logo-img">
+                Maintruction<span>.</span></a>
+            <nav>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premium Home Maintenance & Property Services</h1>
+                <p>Expert Plumbing, Electrical, Carpentry, Painting, and Civil work in Ahmedabad. Reliable, fast, and
+                    professional solutions for your home and office.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary" style="margin-right: 15px;">Our Services</a>
+                    <a href="contact.html" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-subtitle">What We Do</span>
+                <h2 class="section-title">Our Professional Services</h2>
+                <p class="section-desc">We offer a comprehensive range of home maintenance and improvement services to
+                    keep your property in perfect condition.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Plumbing -->
+                <div class="service-card reveal">
+                    <div class="service-img">
+                        <img src="images/plumbing.png" alt="Plumbing Services">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Plumbing Services</h3>
+                        <p>Pipe repair, bathroom fittings, leakages, and complete water solutions by expert plumbers.
+                        </p>
+                        <a href="services.html"
+                            style="color: var(--secondary-color); font-weight: 600; margin-top: 15px; display: inline-block;">Read
+                            More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Electrical -->
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="service-img">
+                        <img src="images/electrical.png" alt="Electrical Services">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Electrical Services</h3>
+                        <p>Safe and efficient wiring, switch installations, and repair services for homes and offices.
+                        </p>
+                        <a href="services.html"
+                            style="color: var(--secondary-color); font-weight: 600; margin-top: 15px; display: inline-block;">Read
+                            More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- AC Repair -->
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="service-img">
+                        <img src="images/ac.png" alt="AC Services">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+                        <h3>AC Services</h3>
+                        <p>Installation, repair, gas filling, and Annual Maintenance Contracts for all AC types.</p>
+                        <a href="services.html"
+                            style="color: var(--secondary-color); font-weight: 600; margin-top: 15px; display: inline-block;">Read
+                            More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Waterproofing -->
+                <div class="service-card reveal" style="transition-delay: 0.3s;">
+                    <div class="service-img">
+                        <img src="images/waterproofing.png" alt="Waterproofing Services">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-tint"></i></div>
+                        <h3>Waterproofing Services</h3>
+                        <p>Advanced waterproofing solutions to protect your home from seepage and dampness.</p>
+                        <a href="services.html#civil"
+                            style="color: var(--secondary-color); font-weight: 600; margin-top: 15px; display: inline-block;">Read
+                            More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding process-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-subtitle">How It Works</span>
+                <h2 class="section-title">Our Simple Process</h2>
+                <p class="section-desc">Getting your home maintenance done is now easier than ever. Follow these four
+                    simple steps.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="step-number">1</div>
+                    <h3>Book a Service</h3>
+                    <p>Contact us via phone, WhatsApp, or our website form to schedule a visit.</p>
+                </div>
+                <div class="process-step reveal" style="transition-delay: 0.1s;">
+                    <div class="step-number">2</div>
+                    <h3>Expert Inspection</h3>
+                    <p>Our professionals visit your property to assess the problem and provide a transparent quote.</p>
+                </div>
+                <div class="process-step reveal" style="transition-delay: 0.2s;">
+                    <div class="step-number">3</div>
+                    <h3>Execution</h3>
+                    <p>Our skilled technicians perform the job with high-quality materials and modern tools.</p>
+                </div>
+                <div class="process-step reveal" style="transition-delay: 0.3s;">
+                    <div class="step-number">4</div>
+                    <h3>Job Done</h3>
+                    <p>We ensure everything is clean and working perfectly before we leave. Satisfaction guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <h3 class="counter" data-target="1500" data-plus="true">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item reveal" style="transition-delay: 0.1s;">
+                    <h3 class="counter" data-target="1200" data-plus="true">0</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item reveal" style="transition-delay: 0.2s;">
+                    <h3 class="counter" data-target="15" data-plus="true">0</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item reveal" style="transition-delay: 0.3s;">
+                    <h3 class="counter" data-target="50" data-plus="true">0</h3>
+                    <p>Expert Technicians</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-subtitle">Reviews</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+            </div>
+
+            <div class="testimonial-slider reveal">
+                <div class="testimonial-card glass">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excellent plumbing service. They arrived on time, fixed the leak efficiently, and left the place
+                        clean. Highly recommended for any home maintenance in Ahmedabad."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/person1/100/100" alt="Client" class="client-img">
+                        <div>
+                            <h4>Rahul Desai</h4>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">Homeowner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"We hired Maintruction for office renovation. Their civil work and painting were top-notch. Very
+                        professional team and transparent pricing."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/person2/100/100" alt="Client" class="client-img">
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Their AC servicing is the best. I opted for their Annual Maintenance Contract and my ACs have
+                        been running flawlessly. Quick response time."</p>
+                    <div class="client-info">
+                        <img src="https://picsum.photos/seed/person3/100/100" alt="Client" class="client-img">
+                        <div>
+                            <h4>Amit Shah</h4>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">Resident</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Need Urgent Home Maintenance?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem;">Our experts are just a call away. Get professional
+                service today.</p>
+            <a href="tel:+918460617976" class="btn btn-secondary" style="margin-right: 15px;"><i
+                    class="fas fa-phone-alt"></i> +91 8460617976</a>
+            <a href="contact.html" class="btn glass" style="color: var(--white);"><i class="fas fa-envelope"></i>
+                Request Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: var(--white); font-size: 2rem;"><img
+                            src="images/logo.png" alt="Maintruction Company" class="logo-img"> Maintruction<span
+                            style="color: var(--accent-color);">.</span></a>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Premium Home Maintenance & Property
+                        Services in Ahmedabad. Quality work, guaranteed satisfaction.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">AC Services</a></li>
+                        <li><a href="services.html">Painting & Civil</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>I-65, Titanium City Centre Mall,<br>Ahmedabad, Gujarat, India</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-phone-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>+91 8460617976</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-envelope" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>maintructioncompany@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maintruction Company. All Rights Reserved. Designed with <i class="fas fa-heart"
+                        style="color: var(--accent-color);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918460617976" class="floating-btn floating-whatsapp" target="_blank"
+        title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+918460617976" class="floating-btn floating-call" title="Call Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="#" class="floating-btn back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

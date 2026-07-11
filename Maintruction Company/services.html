@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Maintruction Company Services - Comprehensive Home Maintenance, Plumbing, Electrical, Carpentry, AC Repair, and Civil Work.">
+    <title>Our Services | Maintruction Company</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(15, 76, 129, 0.9)), url('https://picsum.photos/seed/services_bg/1920/500') no-repeat center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+        }
+
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .category-btn {
+            padding: 10px 25px;
+            background: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .service-category {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-features {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .service-features li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--secondary-color);
+        }
+
+        .service-action {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Maintruction<span>.</span></a>
+            <nav>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container reveal">
+            <h1>Our Services</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Services</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="text-center reveal" style="margin-bottom: 40px;">
+                <p class="section-desc">Explore our comprehensive range of professional home maintenance and repair
+                    services.</p>
+            </div>
+
+            <div class="category-nav reveal">
+                <a href="#plumbing" class="category-btn">Plumbing</a>
+                <a href="#electrical" class="category-btn">Electrical</a>
+                <a href="#carpentry" class="category-btn">Carpentry</a>
+                <a href="#ac" class="category-btn">AC Services</a>
+                <a href="#civil" class="category-btn">Civil & Painting</a>
+                <a href="#waterproofing" class="category-btn">Waterproofing</a>
+            </div>
+
+            <!-- Plumbing Category -->
+            <div id="plumbing" class="service-category reveal">
+                <h2 class="category-title"><i class="fas fa-tools"></i> Plumbing Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://blairsupplyusa.com/wp-content/uploads/2022/05/Who-can-help-me-repair-my-critical-leaks-by-supplying-sturdy-Smith-Blair-pipe-repair-clamps-for-sale.jpg"
+                                alt="Pipe Repair">
+                        </div>
+                        <div class="service-content">
+                            <h3>Pipe & Leakage Repair</h3>
+                            <p>Fast and reliable repair for all types of pipe leaks to prevent water damage.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Concealed pipe repair</li>
+                                <li><i class="fas fa-check"></i> Advanced leak detection</li>
+                                <li><i class="fas fa-check"></i> PVC & UPVC pipe fixing</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/ceramic-bathroom-fittings-20240203162050089.jpg"
+                                alt="Bathroom Fittings"></div>
+                        <div class="service-content">
+                            <h3>Bathroom Fittings</h3>
+                            <p>Installation and repair of premium bathroom fixtures and sanitaryware.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Shower & Tap installation</li>
+                                <li><i class="fas fa-check"></i> Commode fixing</li>
+                                <li><i class="fas fa-check"></i> Washbasin repair</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://rntankcleaning.com/wp-content/uploads/2025/02/underground-water-tank-cleaning-services.webp"
+                                alt="Water Tank">
+                        </div>
+                        <div class="service-content">
+                            <h3>Water Tank Services</h3>
+                            <p>Complete solutions for water tank installation, cleaning, and maintenance.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Overhead tank setup</li>
+                                <li><i class="fas fa-check"></i> Underground tank repair</li>
+                                <li><i class="fas fa-check"></i> Automated water level sensors</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electrical Category -->
+            <div id="electrical" class="service-category reveal">
+                <h2 class="category-title"><i class="fas fa-bolt"></i> Electrical Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://5.imimg.com/data5/ZZ/VS/HA/SELLER-2656676/house-wiring.png" alt="Wiring">
+                        </div>
+                        <div class="service-content">
+                            <h3>House Wiring</h3>
+                            <p>Complete residential and commercial wiring with top safety standards.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Concealed & open wiring</li>
+                                <li><i class="fas fa-check"></i> Fault detection</li>
+                                <li><i class="fas fa-check"></i> High-quality fireproof cables</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://www.thespruce.com/thmb/zJIQdKknabLso-Mx6TxrIaZfDbs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-fix-a-buzzing-dimmer-switch-5209221-hero-6d479ae06e234fa3b400113931dfdb62.jpg"
+                                alt="Switch Installation"></div>
+                        <div class="service-content">
+                            <h3>Switches & Lighting</h3>
+                            <p>Installation of modern switches, LED panels, and decorative lighting.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Modular switch boards</li>
+                                <li><i class="fas fa-check"></i> Chandelier installation</li>
+                                <li><i class="fas fa-check"></i> Outdoor & garden lighting</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://5.imimg.com/data5/SELLER/Default/2024/7/436134387/AB/DP/IS/29473636/4-way-mcb-distribution-board.jpg"
+                                alt="MCB Installation"></div>
+                        <div class="service-content">
+                            <h3>MCB & Panel Board</h3>
+                            <p>Ensuring your home's safety with proper MCB and distribution board setups.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Phase balancing</li>
+                                <li><i class="fas fa-check"></i> Inverter & Generator connection</li>
+                                <li><i class="fas fa-check"></i> Earthing solutions</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carpentry Category -->
+            <div id="carpentry" class="service-category reveal">
+                <h2 class="category-title"><i class="fas fa-hammer"></i> Carpentry Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1tAvCIHRSz9jBUgLitC7lTfygvEkiYu_0lz_4BBXGC1wWkUbGsbPZP9e7&s=10"
+                                alt="Furniture Repair"></div>
+                        <div class="service-content">
+                            <h3>Furniture Repair</h3>
+                            <p>Fixing broken furniture, hinges, channels, and complete restoration.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Sofa & Bed repair</li>
+                                <li><i class="fas fa-check"></i> Lock replacement</li>
+                                <li><i class="fas fa-check"></i> Polishing & finishing</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOrEr9wGy2wyYtgACW29nxLpmXTgheyDGGEuLv52u8dEhw0ksIJTcqqfc&s=10"
+                                alt="Modular Kitchen"></div>
+                        <div class="service-content">
+                            <h3>Modular Kitchen & Wardrobes</h3>
+                            <p>Custom-designed modular furniture to maximize your space beautifully.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Premium plywood & laminate</li>
+                                <li><i class="fas fa-check"></i> Soft-close hinges</li>
+                                <li><i class="fas fa-check"></i> 3D design planning</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://simtaastrix.com/wp-content/uploads/2025/04/upvc-windows-and-doors.png"
+                                alt="Doors and Windows"></div>
+                        <div class="service-content">
+                            <h3>Doors & Windows</h3>
+                            <p>Installation and repair of wooden doors, frames, and windows.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Flush & designer doors</li>
+                                <li><i class="fas fa-check"></i> Mosquito net frames</li>
+                                <li><i class="fas fa-check"></i> Soundproofing solutions</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AC Category -->
+            <div id="ac" class="service-category reveal">
+                <h2 class="category-title"><i class="fas fa-snowflake"></i> AC Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://www.sanchismartcare.com/assets/images/service/ac-uninstallation.webp"
+                                alt=" AC Installation"></div>
+                        <div class="service-content">
+                            <h3>AC Installation & Dismount</h3>
+                            <p>Safe and professional installation of Split and Window Air Conditioners.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Copper piping setup</li>
+                                <li><i class="fas fa-check"></i> Gas pressure check</li>
+                                <li><i class="fas fa-check"></i> Shift & relocate AC</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://5.imimg.com/data5/SELLER/Default/2023/8/335393699/TK/EE/WF/42540115/ac-gas-refilling-service-500x500.jpeg"
+                                alt="AC Repair">
+                        </div>
+                        <div class="service-content">
+                            <h3>AC Repair & Gas Filling</h3>
+                            <p>Expert diagnosis and repair of cooling issues, leaks, and noise.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Compressor repair</li>
+                                <li><i class="fas fa-check"></i> R32 / R410 gas refilling</li>
+                                <li><i class="fas fa-check"></i> PCB board fixing</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://5.imimg.com/data5/SELLER/Default/2024/1/376508036/PW/LE/KA/118856638/ac-amc-contract-services-500x500.jpg"
+                                alt="AMC"></div>
+                        <div class="service-content">
+                            <h3>Annual Maintenance (AMC)</h3>
+                            <p>Regular servicing to ensure your AC runs efficiently and lasts longer.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Jet pump cleaning</li>
+                                <li><i class="fas fa-check"></i> Filter replacement</li>
+                                <li><i class="fas fa-check"></i> Priority breakdown support</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Civil & Painting Category -->
+            <div id="civil" class="service-category reveal">
+                <h2 class="category-title"><i class="fas fa-paint-roller"></i> Civil & Painting</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://5.imimg.com/data5/SELLER/Default/2023/11/364598379/OQ/VJ/ZX/34405990/interior-and-exterior-painting-service.jpg"
+                                alt="Interior Painting"></div>
+                        <div class="service-content">
+                            <h3>Interior & Exterior Painting</h3>
+                            <p>Transform your home with our premium painting services.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Wall putty & primer</li>
+                                <li><i class="fas fa-check"></i> Texture & stencil art</li>
+                                <li><i class="fas fa-check"></i> Weather-proof exterior coating</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img"><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-19iJxldasnpADB1UqiPTtmHikSIO2c2mbxxAQvYe6nJ9rKHmygQEcht&s=10">
+                        </div>
+                        <div class="service-content">
+                            <h3>Home Renovation & Tiles</h3>
+                            <p>Complete bathroom/kitchen remodeling and flooring work.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Tile & marble fitting</li>
+                                <li><i class="fas fa-check"></i> False ceiling design</li>
+                                <li><i class="fas fa-check"></i> Demolition & masonry</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waterproofing Category -->
+            <div id="waterproofing" class="service-category reveal">
+                <h2 class="category-title"><i class="fas fa-tint"></i> Waterproofing Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img"><img src="images/waterproofing.png" alt="Waterproofing"></div>
+                        <div class="service-content">
+                            <h3>Advanced Waterproofing</h3>
+                            <p>Protect your home from seepage and dampness with advanced solutions.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Terrace & bathroom waterproofing</li>
+                                <li><i class="fas fa-check"></i> Crack filling</li>
+                                <li><i class="fas fa-check"></i> Chemical coating</li>
+                            </ul>
+                            <div class="service-action"><a href="contact.html" class="btn btn-secondary">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section"
+        style="background: var(--primary-color); color: var(--white); text-align: center; padding: 80px 0;">
+        <div class="container reveal">
+            <h2>Don't see what you need?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem;">We offer customized home maintenance solutions. Contact
+                us to discuss your requirements.</p>
+            <a href="contact.html" class="btn btn-secondary">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: var(--white); font-size: 2rem;">Maintruction<span
+                            style="color: var(--accent-color);">.</span></a>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Premium Home Maintenance & Property
+                        Services in Ahmedabad. Quality work, guaranteed satisfaction.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">AC Services</a></li>
+                        <li><a href="services.html">Painting & Civil</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li style="display: flex; gap: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>I-65, Titanium City Centre Mall,<br>Ahmedabad, Gujarat, India</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-phone-alt" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>+91 8460617976</span>
+                        </li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <i class="fas fa-envelope" style="margin-top: 5px; color: var(--accent-color);"></i>
+                            <span>maintructioncompany@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maintruction Company. All Rights Reserved. Designed with <i class="fas fa-heart"
+                        style="color: var(--accent-color);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918460617976" class="floating-btn floating-whatsapp" target="_blank"
+        title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+918460617976" class="floating-btn floating-call" title="Call Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="#" class="floating-btn back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for category nav
+        document.querySelectorAll('.category-btn').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const headerOffset = 100;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
